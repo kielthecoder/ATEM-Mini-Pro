@@ -1,1 +1,6 @@
 SPlsWork/
+*.lpz
+*.hash
+*.sig
+*.smft
+*.zip

@@ -1,3 +1,11 @@
+/*
+Dealer Name: IMT
+System Name:
+System Number:
+Programmer: Kiel Lofstrand
+Comments:
+*/
+
 // COMPILER DIRECTIVES /////////////////////////////////////////////////////////////////////
 
 #DEFAULT_VOLATILE
@@ -50,7 +58,7 @@ INTEGER giReady;
 PUSH Connect
 {
 	giReady = 0;
-	AtemConsole.Connect(Address, Port_Number);
+	AtemConsole.Connect();
 	AtemConsole.Hello();
 }
 
@@ -58,7 +66,7 @@ PUSH Disconnect
 {
 	giReady = 0;
 	Connect_Fb = giReady;
-	AtemConsole.Disconnect();
+	AtemConsole.Close();
 }
 
 PUSH Cut
@@ -99,6 +107,6 @@ FUNCTION Main()
 {
 	WaitForInitializationComplete();
 
-	AtemConsole.Initialize();
+	AtemConsole.Initialize(Address, Port_Number);
 	RegisterEvent(AtemConsole, ReadyEvent, ReadyEventHandler);
 }
