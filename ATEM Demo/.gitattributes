@@ -1,0 +1,2 @@
+# SIMPL Windows is very particular about this file format even though it looks like text
+*.smw binary
